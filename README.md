@@ -186,7 +186,22 @@ Ship branding + motion classes via **`SkinBootOverlay`** **`classNames`** prop i
 | **`SkinBootOverlay`** | Focus trap + **`aria-modal`** ledger |
 | **`buildSkinBootstrapScript`** (**`…/next`**) | Embed storage key + **`ids`** + **`default`** for early hydration |
 
-Step 2+ (out of scope here): theme packs (`@bstockwelldev/skin-pack-*`), install CLI, private registry publishes, app dogfooding.
+### Progress
+
+| Step | Artifact | Role |
+| --- | --- | --- |
+| 1 | **`@bstockwelldev/react-skin-system`** (this repo) | Runtime (`SkinProvider`, registry, bootstrap). |
+| 2 | **`@bstockwelldev/skin-pack-robco-terminal`** | Exemplar **RobCo** definitions + `./style.css` (sibling package / repo when published). |
+| 3 | **`@bstockwelldev/skin-cli`** _(planned)_ | Install / patch helpers for Next/Vite hosts. |
+| 4 | **Registry + CI** _(planned)_ | GitHub Packages (or npm), Changesets, publish workflows. |
+
+**Remaining Steps 3–4 (detail):** [`docs/steps-3-4-roadmap.md`](docs/steps-3-4-roadmap.md).
+
+## Roadmap: planned themes & Tabletop Studio integration
+
+Themes under consideration—including **JP 90s UNIX park signage**, **GBC-style handheld workshop**, and **virtual overworld (“town”)** chrome—with **building ↔ route** mappings anchored in **`tabletop-studio`** `navigation.ts`:
+
+[**`docs/planned-themes-tabletop-integration.md`**](docs/planned-themes-tabletop-integration.md)
 
 ## Development
 
