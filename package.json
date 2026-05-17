@@ -1,6 +1,6 @@
 {
   "name": "@bstockwelldev/react-skin-system",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "type": "module",
   "description": "Framework-neutral React runtime for html[data-skin] theming, persistence, boot overlay, and cycling.",
@@ -60,7 +60,6 @@
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },
- 
   "keywords": [
     "react",
     "theme",
