@@ -192,6 +192,7 @@ Ship branding + motion classes via **`SkinBootOverlay`** **`classNames`** prop i
 | --- | --- | --- |
 | 1 | **`@bstockwelldev/react-skin-system`** (this repo) | Runtime (`SkinProvider`, registry, bootstrap). |
 | 2 | **`@bstockwelldev/skin-pack-robco-terminal`** | Exemplar **RobCo** definitions + `./style.css` (sibling package / repo when published). |
+| 2b | **`@bstockwelldev/skin-pack-jp-90s-park-system`**, **`@bstockwelldev/skin-pack-gbc-pocket-workshop`**, **`@bstockwelldev/skin-pack-virtual-world-town`** | Additional standalone skin packs matching the documented mockup directions. |
 | 3 | **`@bstockwelldev/skin-cli`** _(planned)_ | Install / patch helpers for Next/Vite hosts. |
 | 4 | **Registry + CI** _(planned)_ | GitHub Packages (or npm), Changesets, publish workflows. |
 
