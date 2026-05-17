@@ -1,7 +1,7 @@
 {
   "name": "@bstockwelldev/react-skin-system",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "type": "module",
   "description": "Framework-neutral React runtime for html[data-skin] theming, persistence, boot overlay, and cycling.",
   "repository": {
@@ -33,15 +33,14 @@
     "README.md",
     "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest"
-  },
-  "peerDependencies": {
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
@@ -54,8 +53,14 @@
     "react-dom": "^18.3.1",
     "tsup": "^8.3.5",
     "typescript": "^5.6.3",
-    "vitest": "^2.1.5"
+    "vitest": "^2.1.5",
+    "changesets": "^1.0.2"
   },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+ 
   "keywords": [
     "react",
     "theme",
