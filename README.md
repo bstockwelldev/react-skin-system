@@ -6,9 +6,16 @@ React runtime for **`html[data-skin]`** themed UIs—registry validation, **`loc
 - **No Tailwind/shadcn peers** — keep adapters in your application.
 - **Next.js-ready**: optional **`buildSkinBootstrapScript`** helper for **`beforeInteractive`** inline scripts.
 
-## Install (local workspace / unpublished)
+## Install (npm)
 
-Until a registry workflow lands, consume via **exact path**:
+```bash
+pnpm add @bstockwelldev/react-skin-system
+# or: npm install @bstockwelldev/react-skin-system
+```
+
+Releases and changelogs are managed with **Changesets** (see [`.github/workflows/release.yml`](.github/workflows/release.yml)). CI runs on **push/PR to `master`**.
+
+## Install (local sibling / pre-publish)
 
 ```bash
 pnpm add @bstockwelldev/react-skin-system@file:../react-skin-system
@@ -191,12 +198,11 @@ Ship branding + motion classes via **`SkinBootOverlay`** **`classNames`** prop i
 | Step | Artifact | Role |
 | --- | --- | --- |
 | 1 | **`@bstockwelldev/react-skin-system`** (this repo) | Runtime (`SkinProvider`, registry, bootstrap). |
-| 2 | **`@bstockwelldev/skin-pack-robco-terminal`** | Exemplar **RobCo** definitions + `./style.css` (sibling package / repo when published). |
-| 2b | **`@bstockwelldev/skin-pack-jp-90s-park-system`**, **`@bstockwelldev/skin-pack-gbc-pocket-workshop`**, **`@bstockwelldev/skin-pack-virtual-world-town`** | Additional standalone skin packs matching the documented mockup directions. |
-| 3 | **`@bstockwelldev/skin-cli`** _(planned)_ | Install / patch helpers for Next/Vite hosts. |
-| 4 | **Registry + CI** _(planned)_ | GitHub Packages (or npm), Changesets, publish workflows. |
+| 2 | **`@bstockwelldev/skin-pack-robco-terminal`**, **`@bstockwelldev/skin-pack-jp-90s-park-system`**, **`@bstockwelldev/skin-pack-gbc-pocket-workshop`**, **`@bstockwelldev/skin-pack-virtual-world-town`** | Standalone theme packs (`SkinDefinition` + `./style.css`). |
+| 3 | **`@bstockwelldev/skin-cli`** | `init`, `add-pack`, `bootstrap next`, `verify` for Next/Vite hosts. |
+| 4 | **npm + CI** | Changesets + publish workflows per repo; consume via **`^0.1.x`** semver (see each package’s `peerDependencies` / `devDependencies`). |
 
-**Remaining Steps 3–4 (detail):** [`docs/steps-3-4-roadmap.md`](docs/steps-3-4-roadmap.md).
+**Release ordering and migration notes:** [`docs/steps-3-4-roadmap.md`](docs/steps-3-4-roadmap.md).
 
 ## Roadmap: planned themes & Tabletop Studio integration
 
@@ -212,6 +218,8 @@ pnpm run build
 pnpm run typecheck
 pnpm run test
 ```
+
+Contributing and security: [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`SECURITY.md`](SECURITY.md) · agent-oriented notes: [`AGENTS.md`](AGENTS.md).
 
 ## License
 
