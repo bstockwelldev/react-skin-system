@@ -4,12 +4,14 @@ This note extends **[@bstockwelldev/react-skin-system](https://github.com/bstock
 
 ## Implemented skin packs
 
-| Theme | Package | Scope |
+| Theme | Package | Repository |
 | --- | --- | --- |
-| RobCo terminal | `D:/bstockwelldev/skin-pack-robco-terminal` | Finalized CRT/phosphor token layer, typed `robcoTerminalSkin`, `./style.css` export. |
-| JP 90s park system | `D:/bstockwelldev/skin-pack-jp-90s-park-system` | Facility console tokens, map-grid helpers, typed `jp90sParkSystemSkin`, `./style.css` export. |
-| GBC pocket workshop | `D:/bstockwelldev/skin-pack-gbc-pocket-workshop` | Non-infringing handheld/pixel skin, typed `gbcPocketWorkshopSkin`, `./style.css` export. |
-| Virtual world town | `D:/bstockwelldev/skin-pack-virtual-world-town` | Overworld town token layer plus route-metaphor data, typed `virtualWorldTownSkin`, `./style.css` export. |
+| RobCo terminal | `@bstockwelldev/skin-pack-robco-terminal` | [skin-pack-robco-terminal](https://github.com/bstockwelldev/skin-pack-robco-terminal) |
+| JP 90s park system | `@bstockwelldev/skin-pack-jp-90s-park-system` | [skin-pack-jp-90s-park-system](https://github.com/bstockwelldev/skin-pack-jp-90s-park-system) |
+| GBC pocket workshop | `@bstockwelldev/skin-pack-gbc-pocket-workshop` | [skin-pack-gbc-pocket-workshop](https://github.com/bstockwelldev/skin-pack-gbc-pocket-workshop) |
+| Virtual world town | `@bstockwelldev/skin-pack-virtual-world-town` | [skin-pack-virtual-world-town](https://github.com/bstockwelldev/skin-pack-virtual-world-town) |
+
+Each ships typed metadata and a **`style.css`** subpath export. Hosts combine them with **`@bstockwelldev/react-skin-system`** (registry + bootstrap).
 
 ## Separation of responsibilities
 

@@ -1,19 +1,21 @@
 # Roadmap: Steps 3–4 (after Step 2 skin pack)
 
-This document tracks **remaining work** to make the skin stack repeatable and publishable **before** adopting it inside apps such as **`tabletop-studio`**.
+This document tracks **release process, publishing order, and consumer migration** for the skin stack (`@bstockwelldev/react-skin-system`, skin packs, and `@bstockwelldev/skin-cli`). For day-to-day usage, start with each package’s **README**.
 
-## Current state
+## Current state (2026)
 
 | Step | Package / artifact | Status |
 | --- | --- | --- |
-| 1 | [`@bstockwelldev/react-skin-system`](https://github.com/bstockwelldev/react-skin-system) | Runtime shipped (provider, registry, bootstrap helper, tests). Remains **`private`** until publishing is configured. |
-| 2 | [`@bstockwelldev/skin-pack-robco-terminal`](https://github.com/bstockwelldev/skin-pack-robco-terminal) | Exemplar **RobCo** `SkinDefinition` + scoped CSS (`html[data-skin='robco-terminal']`). **`private`** until publishing. |
+| 1 | [`@bstockwelldev/react-skin-system`](https://github.com/bstockwelldev/react-skin-system) | **`private: false`**, semver **`0.1.x`**. CI: **build / typecheck / test**. Changesets **`release`** workflow publishes when **`NPM_TOKEN`** secret is configured. |
+| 2 | Skin packs — RobCo, JP 90s, GBC workshop, Virtual world town | Each repo ships **`SkinDefinition` + `./style.css`**, **`peerDependencies`** on **`@bstockwelldev/react-skin-system@^0.1.0`**. Prefer **npm semver** installs after the runtime hits the registry; refresh **`pnpm-lock.yaml`** locally after publish. |
+| 3 | [`@bstockwelldev/skin-cli`](https://github.com/bstockwelldev/skin-cli) | **Shipped**: **`skin-cli init`**, **`add-pack`**, **`bootstrap next`**, **`verify`**, **`--dry-run`**. Separate repo; publish after runtime (and optionally after exemplar packs) for template quality. |
+| 4 | **npm + GitHub Actions** | **Changesets** + **`ci.yml` / `release.yml`** per repo. **Publish order:** runtime → skin packs (any order) → CLI (last is optional but recommended after consumers exist). |
 
-**Not yet started:** Step 3 (CLI), Step 4 (registry + CI publish).
+**Operational detail for agents / contributors:** root **[`AGENTS.md`](https://github.com/bstockwelldev/react-skin-system/blob/master/AGENTS.md)** and **[`CONTRIBUTING.md`](https://github.com/bstockwelldev/react-skin-system/blob/master/CONTRIBUTING.md)** in each repository.
 
 ---
 
-## Step 3 — `@bstockwelldev/skin-cli`
+## Step 3 — `@bstockwelldev/skin-cli` *(implemented; spec retained below)*
 
 **Goal:** Idempotent scaffolding so hosts do not hand-wire registry entries, bootstrap scripts, and CSS imports across Next.js / Vite codebases.
 
@@ -50,7 +52,7 @@ This document tracks **remaining work** to make the skin stack repeatable and pu
 
 ---
 
-## Step 4 — Private (or scoped public) publishing + CI
+## Step 4 — Private (or scoped public) publishing + CI *(in progress per repo)*
 
 **Goal:** Consume packages via semver instead of **`file:`** siblings, suitable for CI and remote agents.
 
@@ -99,11 +101,17 @@ Choose one and document it in the repos’ **`README`**:
 
 ---
 
-## Step 5+ (explicitly beyond 3–4)
+## Step 5+ (explicitly beyond initial publish)
 
-- Dogfood **`tabletop-studio`**: migrate `skinRegistry` / layouts to **`SkinProvider`** + published packs (**separate backlog**—not part of Steps 3–4).  
-- Additional **`skin-pack-*`** packages (JP 90s, GBC homage, overworld-themed tokens) once the CLI + publish path exist.
+- Dogfood **`tabletop-studio`**: migrate `skinRegistry` / layouts to **`SkinProvider`** + published packs (**separate backlog**).  
+- Additional **`skin-pack-*`** themes and deeper product integration are **backlog**, not gated on CLI/publish scaffolding.
 
 ---
 
-_Last updated alongside Step 2 RobCo skin pack completion._
+## Appendix — superseded wording
+
+Earlier drafts described the runtime as **`private`** and Steps 3–4 as “not started.” That applied before **`private: false`**, **`skin-cli`**, and Changesets workflows landed. Prefer the **Current state** table above.
+
+---
+
+_Last updated during documentation hygiene / npm prep sweep._
